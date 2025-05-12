@@ -1,0 +1,51 @@
+body{
+    background-image: url('../assets/piano.jpg');
+    display:flex;
+    object-fit: cover;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+
+}
+.key{
+    display:flex;
+    position:relative;
+    color:white;
+    justify-content:center;
+    align-items:center;
+    box-sizing: border-box;
+    border:3px solid white;
+    width: 100px;
+    height:100px;
+    padding: 5px;
+    transform: scale(1);
+    transition: border 0.2s ease, transform 0.2s ease;
+
+
+
+}
+.key::after{
+    content: '';
+    position: absolute;
+    left: -5px;
+    top:-5px;
+    width: calc(100% + 5px);
+    height:calc(100% + 5px);
+    border:3px dotted white;
+    transform:scale(1);
+    opacity:0;
+    pointer-events: none;
+    transition:transform 1s ease, opacity 1s ease;
+
+    
+
+}
+.playing{
+    border:none;
+    transform: scale(1);
+}
+.playing::after{
+    transform: scale(1.1);
+    opacity: 1;
+}
