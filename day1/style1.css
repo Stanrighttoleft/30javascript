@@ -1,0 +1,60 @@
+.wrap{
+    background-image:url(../assets/piano.jpg);
+    background-size:cover;
+    height:100vh;
+    display:flex;
+    margin:0px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+ 
+    
+}
+
+.key{
+    border: 5px solid white; /* Reserve space for border */
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1); /* Add this */
+    position:relative;
+    height: 100px;
+    width: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Makes padding/border stay inside fixed size */
+    padding: 5px; /* Default padding so hover doesn't shift */
+    transition: transform 0.3s ease, border 0.3s ease; /* Optional: smooth effect */
+}
+.key:hover{
+    
+    border:5px dotted lightblue;
+    transform:scale(1.05);
+    transition:transform 0.2s ease, border 0.2s ease;
+    
+}
+
+.key::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    border: 5px dotted lightblue;
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 1s ease, opacity 0.1s ease;
+    pointer-events: none; 
+
+}
+.playing {
+    transform: scale(1.1); 
+    border: none; 
+}
+
+.playing::after {
+    opacity: 1;
+    transform: scale(1.1); /* Grows the border out */
+}
+
