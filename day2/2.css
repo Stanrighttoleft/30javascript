@@ -8,8 +8,8 @@ body{
 
 .clock{
     border: 6px solid white;
-    height: 300px;
-    width:300px;
+    height:200px;
+    width:200px;
     border-radius:50%;
     display: flex;
     position:relative;
