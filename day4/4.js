@@ -16,32 +16,89 @@ const people=['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick',
 //1.Filter the list of inventors for those who were born in the 1500's
 
 
+let middle=inventors.filter(middle=>middle.year>=1500 && middle.year<1600)
+   
+console.log(middle)
+console.table(middle)
+
+
+
+
 //Array.phototype.map()
 //2.Give us an array of the inventory first and last names
 
+const fullname=inventors.map(inventor=>`${inventor.first}  ${inventor.last}`)
+console.log(fullname)
 
 //Array.phototype.sort()
 //3.sort the inventors by birthday, oldest to youngest
 
+const ordered=inventors.sort((a,b)=>a.year>b.year ? 1 : -1)
 
+console.log(ordered)
+console.table(ordered)
 
 //Array.phototype.reduce()
 //4. How many years did all the inventors live?
 
+const total=inventors.reduce((total,inventor)=>{
+    return total + (inventor.passed-inventor.year)
+},0)
+
+console.log(total)
+
 
 //5. Sort the inventors by years lived
 
+const sorted=inventors.sort((a,b)=>(a.passed-a.year)>(b.passed-b.year) ? -1 : 1)
+
+console.table(sorted)
 
 //6.create a list of boulevrds in paris that contain 'de' anywheare in the name
 //https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+/** 
+ ****this is the answer*****
+// const links=Array.from(document.querySelectorAll('.mw-category a'))
+
+// const de=links
+// .map(link=>link.textContent)
+// .filter(link=>link.includes('de'))
+
+*/
+            
 
 
 
 //7.sort exercise
 //Sort the people alphabetically by the last name
 
+const alpha=people.sort((a,b)=>{
+    const [alast, afirst]=a.split(', ');
+    const [blast, bfirst]=b.split(', ');
+    return alast>blast ? 1: -1
+})
+console.table(alpha)
+
 
 
 //8.Reduce exercise
 //Sum up the instances of each of these
 const data=['car','car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+const transportation=data.reduce((object, item)=>{
+    if(!object[item]){
+        object[item]=0;
+    }
+    object[item]++;
+        return object;
+    
+    
+    
+    
+    
+    
+    
+},{})
+
+console.log(transportation)
