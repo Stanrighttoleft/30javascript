@@ -93,12 +93,6 @@ const transportation=data.reduce((object, item)=>{
     object[item]++;
         return object;
     
-    
-    
-    
-    
-    
-    
 },{})
 
 console.log(transportation)
