@@ -56,6 +56,17 @@
     const indexTarget=comments.findIndex(target=>target.id===823423)
     console.log(indexTarget)
 
+    //comments.splicee(indexTarget,1)
+
+    const things=[
+        ...comments.slice(0,indexTarget),
+        ...comments.slice(indexTarget+1)
+    ]
+
+    console.log(things)
+
+
+
   </script>
 </body>
 </html>
