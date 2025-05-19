@@ -1,0 +1,83 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    let d='good'
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+
+    console.log(dogs)
+
+    // Interpolated
+    console.log('this is an awesome %s dog','good')
+    console.log(`this is an awesome ${d} dog`)
+
+    // Styled
+
+    console.log('%c this is try',`font-size:50px; background-color:red; text-shadow:100px 5px 0 blue`)
+
+    // warning!
+    console.warn('Here!')
+
+    // Error :|
+    console.error('Bad!')
+
+    // Info
+    console.info('Attention!')
+
+    // Testing
+    const p=document.querySelector('p')
+    console.assert(p.classList.contains('strange'),'impossible')
+    console.assert(1===1,'this is wrong')
+    console.assert(1===2, 'this is wrong')
+
+    // clearing
+    //console.clear()
+
+    // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
+
+    // Grouping together
+    dogs.forEach(dog=>{
+        console.group(`${dog.name}`)
+        console.log(`this is ${dog.name}`)
+        console.log(`the dog is ${dog.age} years old`)
+        console.groupEnd(`${dog.name}`)
+    })
+
+    // counting
+    console.count('steve')
+    console.count('steve')
+    console.count('steve')
+    console.count('steve')
+    console.count('steve')
+
+    // timing
+    const cities=[]
+    console.time('fetch data')
+    fetch('https://gist.githubusercontent.com/Stanrighttoleft/1325f4752841e0de35df0adeabf26bd6/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json')
+    .then(bloc=>bloc.json())
+    .then(data=>cities.push(...data))
+    console.timeEnd('fetch data')
+    console.log('cities')
+
+
+  </script>
+</body>
+</html>
