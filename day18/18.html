@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Videos</title>
-  <link rel="icon" href="https://fav.farm/🔥" />
+ 
 </head>
 <body>
   <ul class="videos">
@@ -183,6 +183,27 @@
     </li>
   </ul>
 <script>
+    const timeNodes=Array.from(document.querySelectorAll('[data-time]'));
+    const seconds=timeNodes
+    .map(node=>node.dataset.time)
+    .map(timeCode=>{
+        const [mins,secs]=timeCode.split(':').map(parseFloat);
+        return (mins * 60)+secs;
+        
+        
+    }).reduce((total,second)=>total+second)
+
+    let secondsLeft=seconds
+    const hours=Math.floor(secondsLeft/3600);
+    secondsLeft=secondsLeft%3600;
+
+    const mins=Math.floor(secondsLeft/60);
+    secondsLeft=secondsLeft%60;
+
+    const secondsF=secondsLeft
+    console.log(hours, mins, secondsF)
+    console.log(seconds)
+    
 </script>
 </body>
 </html>
