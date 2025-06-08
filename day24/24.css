@@ -49,6 +49,10 @@ nav{
     position:relative;
     z-index:1;
 }
+.fixed-nav nav{
+    position:fixed;
+    box-shadow: 0 5px rgba(0,0,0,0.05);
+}
 
 nav ul{
     margin:0;
