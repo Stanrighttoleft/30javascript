@@ -31,6 +31,6 @@ function displayEndTime(timestamp){
     const end=new Date(timestamp);
     const hours=end.getHours();
     const mins=end.getMinutes();
-    endTime.textContent=`Be back at ${hours}:${mins}`;
+    endTime.textContent=`Be back at ${hours>12 ? hours-12 :hours}:${mins<10 ?"0" :''}${mins}`;
 
 }
