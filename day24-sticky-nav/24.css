@@ -14,6 +14,7 @@ body {
   box-sizing: inherit;
 }
 
+
 .site-wrap {
   max-width: 700px;
   margin: 70px auto;
@@ -23,6 +24,9 @@ body {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
   transform: scale(0.98);
   transition: transform 0.5s;
+}
+.nav-fixed .site-wrap{
+  transform:scale(1.1);
 }
 
 header {
@@ -39,6 +43,11 @@ h1 {
   color: white;
   font-size: 7vw;
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+}
+.nav-fixed >nav{
+  position:fixed;
+  box-shadow: 0 10px rgba(0, 0, 0, 0.05);
+
 }
 
 nav {
@@ -72,6 +81,9 @@ li.logo {
   transition: all .5s;
   font-weight: 600;
   font-size: 30px;
+}
+.nav-fixed li.logo{
+  max-width:500px;
 }
 
 li.logo a {
