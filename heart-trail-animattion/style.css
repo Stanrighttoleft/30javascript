@@ -3,30 +3,36 @@ body {
   height: 100vh;
   background-color: black;
   overflow: hidden;
+display:flex;
+justify-content: center;
 }
 
-span {
-  background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-512.png");
-  width: 100px;
-  height: 100px;
+.omg {
+  width: 500px;
+  height: 500px;
+  border: 1px solid white;
+  position: relative; /* Required for absolutely positioned children */
+  overflow: hidden;    /* Prevent bubbles from spilling out */
+}
+
+.bubble {
   position: absolute;
-  pointer-events: none;
+  background: url("./feather.png");
   background-size: cover;
-  left: 50%;
-  top: 50%;
+  pointer-events: none;
+  animation: animate 7s linear;
   transform: translate(-50%, -50%);
-  animation: animate 6s linear;
 }
 
 @keyframes animate {
   0% {
-    transform: translate(-50%, -50%);
+    transform: rotate(0deg) translate(0%, -50%);
     opacity: 1;
     filter: hue-rotate(0);
   }
   100% {
-    transform: translate(-50%, -5000%);
+    transform: rotate(90deg) translate(100%, -5000%);
     opacity: 0;
-    filter: hue-rotate(720deg);
+    filter: hue-rotate(180deg);
   }
 }
